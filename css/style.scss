@@ -76,6 +76,20 @@ main {
     grid-template-rows: 1fr;
 }
 
+#loder-bar {
+    height: .1rem;
+    width: 0%;
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #4f5bd5);
+    position: absolute;
+    top: 0;
+    transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
 .profile_img {
     height: 40px;
     width: 40px;
@@ -87,20 +101,22 @@ main {
 
 nav {
     display: grid;
-    grid-template-rows: 2.1fr 15fr;
+    grid-template-rows: .5fr 7fr;
     background-color: var(--bg-primary-color);
-    border-right:1px solid #ffffff1c ;
+    border-right: 1px solid #ffffff1c;
+
     .logo {
-        // padding: var(--space-md) 0;
+        padding-top: var(--space-xl);
+        padding-bottom: var(--space-lg);
         display: flex;
         align-items: center;
         justify-content: start;
 
         svg {
-            height: 20px;
-           display: flex;
-        align-items: center;
-        justify-content: start;  
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
         }
     }
 
@@ -111,26 +127,68 @@ nav {
         justify-content: space-between;
         flex-direction: column;
         font-family: sans-serif;
+
         ul {
+            position: relative;
+
+            z-index: 30;
+
             li {
                 padding: 7px 10px;
                 margin: 7px;
                 display: flex;
                 align-items: center;
+                justify-content: start;
                 text-transform: capitalize;
                 gap: var(--space-sm);
                 border-radius: 6px;
                 cursor: pointer;
                 transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                &:hover{
-                     background-color: #1a1a1a;
-                }
-                i{
+                position: relative;
+                z-index: 1;
 
+                &:hover {
+                    background-color: #1a1a1a;
+                    scale: 1.01;
+                }
+
+                &:active {
+                    scale: .995;
+                }
+
+                i {
+
+                    font-size: var(--font-md);
+                }
+
+                span {
                     font-size: var(--font-sm);
                 }
-                span {
-                    font-size: var(--font-xs);
+
+                ul {
+
+                    width: 60%;
+                    position: absolute;
+                    z-index: 20;
+                    background-color: #262626;
+                    border-radius: .5rem;
+                    cursor: default;
+                    padding: 0 .2rem;
+
+                    li {
+                        cursor: pointer;
+                        // background-color: blue;
+                        background-color: transparent;
+                        padding: .4rem;
+                        margin: .1rem;
+                        display: flex;
+                        justify-content: space-between;
+
+                        &:hover {
+                            background-color: transparent;
+                            scale: 1;
+                        }
+                    }
                 }
             }
         }
@@ -147,9 +205,100 @@ nav {
 }
 
 .content-body {
- 
+
 
     .suggested {
         background-color: #222;
     }
+}
+
+.align-bl {
+    top: 100%;
+    left: 0;
+}
+
+.align-tl {
+    bottom: 100%;
+    left: 0;
+}
+
+
+
+
+.a-up {
+    animation: up_animation .35s cubic-bezier(.46, .38, .36, .98) both 1;
+}
+
+@keyframes up_animation {
+    0% {
+        transform: translate(0, -10px);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+.a-down {
+    animation: down_animation .35s cubic-bezier(.46, .38, .36, .98) both 1;
+}
+
+@keyframes down_animation {
+    0% {
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+.dropdown {
+    display: none;
+}
+
+.menu-2 .dropdown  {
+    width: 70%;
+    position: absolute;
+    z-index: 20;
+    background-color: #262626;
+    border-radius: .5rem;
+    cursor: default;
+    padding: .2rem;
+
+    li {
+        cursor: pointer;
+        // background-color: blue;
+        background-color: transparent;
+        padding: .4rem;
+        margin: .1rem;
+        display: flex;
+        justify-content: flex-end;
+        flex-flow: row-reverse;
+        gap: 1rem;
+        &:hover {
+            scale: 1;
+            background-color: #262626;
+        }
+
+        .logout{
+            padding: 10px 5px;
+            margin: 10px ;
+        }
+    }
+    
+        .thik{
+            height: .5rem;
+            width: 100%;
+           opacity: 10%;
+           background-color: #fff;
+        }
+        
+    
+        .normal{
+           opacity: 10%;
+           background-color: #fff;
+           margin: 5px;
+        }
+        
 }

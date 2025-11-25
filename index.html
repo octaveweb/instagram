@@ -22,11 +22,14 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css">
 
     <link rel="stylesheet" href="css/style.css">
-    <title>Instagram</title>
+    <link rel="shortcut icon"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/960px-Instagram_logo_2022.svg.png"
+        type="image/x-icon">
+    <title>Instagram - Home</title>
 </head>
 
 <body>
-
+    <div id="loder-bar"></div>
     <main>
         <nav>
             <div class="logo">
@@ -41,62 +44,132 @@
 
             <div class="elements">
                 <ul>
-                <li>
-                    <!-- <i class="fa-light fa-house-chimney"></i> -->
-                    <i class="fa-solid fa-house-chimney"></i>
-                    <span>Home</span>
-                </li>
-                <li>
-                    <i class="fa-regular fa-magnifying-glass"></i>
-                    <!-- <i class="fa-sharp fa-solid fa-magnifying-glass"></i> -->
-                    <span>search</span>
-                </li>
-                <li>
-                    <i class="fa-regular fa-compass"></i>
-                    <!-- <i class="fa-solid fa-compass"></i> -->
-                    <span>Explore</span>
-                </li>
-                <li>
-                    <i class="fa-regular fa-airplay"></i>
-                    <!-- <i class="fa-solid fa-airplay"></i> -->
-                    <span>Reels</span>
-                </li>
-                <li>
-                    <!-- <i class="fa-solid fa-share-from-square"></i> -->
-                    <i class="fa-light fa-share-from-square"></i>
-                    <span>Massages</span>
-                </li>
-                <li>
-                    <!-- <i class="fa-solid fa-heart"></i> -->
-                    <i class="fa-light fa-heart"></i>
-                    <span>Notifications</span>
-                </li>
-                <li>
-                    <i class="fa-light fa-plus"></i>
-                    <span>create</span>
-                </li>
-                <li>
-                    <!-- <i class="fa-solid fa-chart-simple"></i> -->
-                    <i class="fa-light fa-chart-simple"></i>
-                    <span>Dashboard</span>
-                </li>
-                <li>
-                    <div class="profile_img"></div>
-                    <span>profile</span>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <i class="fa-light fa-bars"></i>
-                    <span>More</span>
-                </li>
-                <li>
-                    <!-- <i class="fa-solid fa-box"></i> -->
-                   <i class="fa-light fa-box"></i>
-                    <span>Also from Meta</span>
-                </li>
-                </li>
-            </ul>
+                    <li class="list">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <span>Home</span>
+                    </li>
+                    <li class="list">
+                        <i class="fa-regular fa-magnifying-glass"></i>
+                        <span>search</span>
+                    </li>
+                    <li class="list">
+                        <i class="fa-regular fa-compass"></i>
+                        <span>Explore</span>
+                    </li>
+                    <li class="list">
+                        <i class="fa-regular fa-airplay"></i>
+                        <span>Reels</span>
+                    </li>
+                    <li class="list">
+                        <i class="fa-light fa-share-from-square"></i>
+                        <span>Massages</span>
+                    </li>
+                    <li class="list">
+                        <i class="fa-light fa-heart"></i>
+                        <span>Notifications</span>
+                    </li>
+                    <li class="list">
+                        <i class="fa-light fa-plus"></i>
+                        <span>create</span>
+
+                        <ul class="dropdown align-bl">
+                            <li>
+                                <span>Post</span>
+                                <i class="fa-light fa-photo-film"></i>
+
+
+                            </li>
+                            <li>
+                                <span>Live video</span>
+                                <i class="fa-regular fa-signal-stream"></i>
+
+                            </li>
+                            <li>
+                                <span>Ad</span>
+                                <i class="fa-light fa-display-chart-up"></i>
+                            </li>
+                            <li>
+                                <span>AI</span>
+                                <i class="fa-light fa-grid-2"></i>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="list">
+                        <i class="fa-light fa-chart-simple"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="list">
+                        <div class="profile_img"></div>
+                        <span>profile</span>
+                    </li>
+                </ul>
+                <ul class="menu-2">
+                    <li class="list">
+                        <i class="fa-light fa-bars"></i>
+                        <span>More</span>
+
+                        <ul class="dropdown change align-tl">
+                            <li>
+                                <span>Settings</span>
+                                <i class="fa-sharp fa-light fa-gear-complex"></i>
+
+
+                            </li>
+                            <li>
+                                <span>Your activity</span>
+                                <i class="fa-light fa-chart-line"></i>
+                            </li>
+                            <li>
+                                <span>Saved</span>
+                                <i class="fa-light fa-bookmark"></i>
+                            </li>
+                            <li>
+                                <span>Switch apparance</span>
+                                <i class="fa-light fa-moon"></i>
+                            </li>
+                            <li>
+                                <span>Report a problem</span>
+                                <i class="fa-light fa-calendar-exclamation"></i>
+                            </li>
+                            <hr class="normal">
+                            <li>
+                                <span>Switch account</span>
+
+                            </li>
+                            <hr class="normal">
+                            <li class="logout">
+                                <span>Log out</span>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list">
+                        <i class="fa-light fa-box"></i>
+                        <span>Also from Meta</span>
+
+                        <ul class="dropdown change align-tl">
+                            <li>
+                                <span>Meta AI</span>
+                                <i class="fa-brands fa-meta"></i>
+                            </li>
+                            <li>
+                                <span>AI Studio</span>
+                                <i class="fa-light fa-cubes"></i>
+                            </li>
+                            <li>
+                                <span>WhatsApp</span>
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </li>
+                            <li>
+                                <span>Threads</span>
+                                <i class="fa-brands fa-threads"></i>
+                            </li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
             </div>
         </nav>
         <div class="content-body">
