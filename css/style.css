@@ -57,9 +57,7 @@ body {
 main {
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr;
+  position: relative;
 }
 
 #loder-bar {
@@ -81,6 +79,11 @@ main {
 }
 
 nav {
+  height: 100vh;
+  width: 15vw;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: grid;
   grid-template-rows: 0.5fr 7fr;
   background-color: var(--bg-primary-color);
@@ -244,17 +247,57 @@ nav .profile_img {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  right: 0;
+  grid-template-columns: 1fr 2fr 1.5fr;
+  font-family: var(--font-2);
+  background-color: var(--bg-primary-color);
 }
 .content-body #root {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 0 10rem;
 }
 .content-body .suggested {
-  background-color: #222;
+  width: 100%;
+  background-color: var(--bg-primary-color);
+}
+.content-body .suggested .suggested-contact {
+  margin-top: 1rem;
+  width: 300px;
+  padding: 1rem 0;
+  outline: 1px solid rgba(218, 218, 218, 0.1529411765);
+  border-radius: var(--border-radius-sm);
+}
+.content-body .suggested .suggested-contact .tg-sug-c-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 1rem;
+  font-size: 12px;
+}
+.content-body .suggested .suggested-contact .tg-sug-c-1 .seeAll {
+  cursor: pointer;
+}
+.content-body .suggested .suggested-contact .user {
+  padding: 0 1.5rem;
+  margin: 0.4rem 0;
+}
+.content-body .suggested .suggested-contact #audioData {
+  color: #838383;
+}
+.content-body .suggested .suggested-contact .img {
+  height: 40px;
+  width: 40px;
+}
+.content-body .suggested .suggested-contact .data .name {
+  font-size: 12px;
+  font-weight: 600;
+}
+.content-body .suggested .suggested-contact #follow {
+  font-size: 12px;
 }
 
 .story {
@@ -277,10 +320,10 @@ nav .profile_img {
 
 .status {
   height: 13vh;
-  width: 100%;
+  width: 400px;
   background-color: var(--bg-primary-color);
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 1rem;
 }
@@ -325,4 +368,135 @@ nav .profile_img {
   position: relative;
   margin-top: 8px;
   z-index: 2;
+}
+
+#content {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  padding: 0 8rem 10rem;
+}
+
+.card {
+  background-color: transparent;
+}
+.card .top {
+  margin: 1rem 0 0.75rem;
+}
+.card .video-img-post {
+  height: 565px;
+  width: 100%;
+  position: relative;
+  outline: 1px solid rgba(218, 218, 218, 0.1529411765);
+  border-radius: var(--border-radius-sm);
+}
+.card .video-img-post video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background: #000;
+}
+.card .video-img-post .volume {
+  position: absolute;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.card .video-img-post .volume input {
+  width: 100px;
+  transform: rotate(-90deg);
+}
+.card .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0.7rem;
+}
+.card .bottom .intraction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 0.2rem;
+}
+.card .bottom .intraction .cell-1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.card .bottom .intraction .cell-1 i {
+  font-size: var(--font-md);
+  cursor: pointer;
+}
+.card .bottom .intraction i {
+  font-size: var(--font-md);
+  cursor: pointer;
+}
+.card .bottom .caption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.card .bottom .caption .name {
+  font-size: 13px;
+  font-size: 500;
+}
+.card .bottom .caption i {
+  color: #4c79ff;
+}
+.card .bottom .caption #captionText {
+  font-size: 12px;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user .user_render {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user .user_render .img {
+  margin-right: 10px;
+  height: 35px;
+  width: 35px;
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--border-radius-2xl);
+}
+.user .user_render .data {
+  cursor: pointer;
+}
+.user .user_render .data p {
+  font-size: 12px;
+  font-weight: 100;
+  padding-top: 1px;
+}
+.user .user_render .data > div p {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+}
+.user .user_render .data > div p i {
+  color: #4c79ff;
+}
+.user .user_render .data > div span > span {
+  font-size: 12px;
+}
+.user .right-c {
+  display: flex;
+  gap: 10px;
+}
+.user .right-c p {
+  cursor: pointer;
+  font-size: 14px;
+  color: #505fff;
+}
+.user .right-c i {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
