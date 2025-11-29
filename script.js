@@ -1,3 +1,13 @@
+
+// Initialize Lenis
+const lenis = new Lenis({ autoRaf: true });
+lenis.on("scroll", console.log);
+
+// Initialize GSAP
+gsap.registerPlugin(TextPlugin);
+
+
+
 function loader_bar(a) {
     let gain = 0
     let time = a
@@ -882,11 +892,12 @@ let suggestedUsers = [
 ];
 
 
-let posts = postData.slice(0, 5)
+let posts = postData.slice(0, 14)
+let storyDataCount = postData.slice(0, 5)
 let newSuggested = suggestedUsers.slice(0, 5)
 let story = [];
 
-posts.forEach(elm => {
+storyDataCount.forEach(elm => {
     story.push({
         userName: elm.userName,
         userImg: elm.userImg,
@@ -957,7 +968,7 @@ function addCard() {
                             </div>
                         </div>
                         <div class="video-img-post">
-                            <video muted autoplay loop src="${posts[0].videoUrl}"></video>
+                            <video muted autoplay loop src="${elm.videoUrl}"></video>
                             <div class="volume">
                                  ${elm.isMuted ? '<i class="fa-solid fa-volume-slash"></i>' : '<i class="fa-solid fa-volume"></i>'}
                             </div>

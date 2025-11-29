@@ -323,7 +323,7 @@ nav .profile_img {
   width: 400px;
   background-color: var(--bg-primary-color);
   display: flex;
-  justify-content: start;
+  justify-content: flex-end;
   align-items: center;
   gap: 1rem;
 }
@@ -378,6 +378,7 @@ nav .profile_img {
 }
 
 .card {
+  width: 468px;
   background-color: transparent;
 }
 .card .top {
@@ -504,4 +505,18 @@ nav .profile_img {
 
 .see {
   cursor: pointer;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 770px) {
+  nav {
+    display: none;
+  }
+  #content {
+    padding: 0 1rem;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 1160px) {
+  .suggested {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
