@@ -509,13 +509,13 @@ nav {
         display: flex;
         flex-direction: column;
         gap: .5rem;
-        padding: 0 .7rem;
+      
 
         .intraction {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0 .2rem;
+            padding: 1rem .7rem .2rem;
 
             .cell-1 {
                 display: flex;
@@ -538,7 +538,7 @@ nav {
             display: flex;
             align-items: center;
             gap: .5rem;
-
+    padding: 0 0.7rem;
             .name {
                 font-size: 13px;
                 font-size: 500;
@@ -574,7 +574,7 @@ nav {
             background-position: center;
             background-size: cover;
             border-radius: var(--border-radius-2xl);
-
+            cursor: pointer;
         }
 
         .data {
@@ -619,4 +619,7 @@ nav {
             cursor: pointer;
         }
     }
+}
+.see{
+    cursor: pointer;
 }

@@ -414,13 +414,12 @@ nav .profile_img {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 0 0.7rem;
 }
 .card .bottom .intraction {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0 0.2rem;
+  padding: 1rem 0.7rem 0.2rem;
 }
 .card .bottom .intraction .cell-1 {
   display: flex;
@@ -439,6 +438,7 @@ nav .profile_img {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0 0.7rem;
 }
 .card .bottom .caption .name {
   font-size: 13px;
@@ -468,6 +468,7 @@ nav .profile_img {
   background-position: center;
   background-size: cover;
   border-radius: var(--border-radius-2xl);
+  cursor: pointer;
 }
 .user .user_render .data {
   cursor: pointer;
@@ -498,5 +499,9 @@ nav .profile_img {
   color: #505fff;
 }
 .user .right-c i {
+  cursor: pointer;
+}
+
+.see {
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
