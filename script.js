@@ -1,8 +1,6 @@
 
 // Initialize Lenis
 const lenis = new Lenis({ autoRaf: true });
-lenis.on("scroll", console.log);
-
 // Initialize GSAP
 gsap.registerPlugin(TextPlugin);
 
@@ -140,7 +138,6 @@ function iconsMenu() {
         });
     }
 }
-iconsMenu()
 
 
 let postData = [
@@ -915,7 +912,7 @@ storyDataCount.forEach(elm => {
 
 
 function addStory(n) {
-    
+
     let storyCont = document.querySelector(".status")
     let data = ""
     story.forEach((elm) => {
@@ -925,14 +922,13 @@ function addStory(n) {
                                 <div class="outline"></div>
                                 <p class="friend_name">${elm.userName}</p>
                 </div>`
-        
-    })  
+
+    })
 
     storyCont.innerHTML = data
 
 
 }
-addStory(5)
 
 
 
@@ -942,7 +938,7 @@ function addCard() {
     let container = document.querySelector("#content");
     let data = "";
     posts.forEach((elm, ind) => {
-        data += `  <div class="card">
+        data += `  <div class="card" id="${ind}">
                         <div class="top">
                             <div class="user">
                                 <div class="user_render">
@@ -978,14 +974,16 @@ function addCard() {
                                 <span class="cell-1">
                                     <span class="like">
                                    
-                                    ${elm.isFollowed ? ' <i class="fa-light fa-heart"></i>' : '<i class="fa-sharp fa-solid fa-heart" style="color:red"></i>'}
+                                    ${elm.isFollowed ? '<i class="fa-sharp fa-solid fa-heart" style="color:red"></i>' : '<i class="fa-light fa-heart"></i>'}
                                          <span class="likeCount">${elm.likeCount}</span>
                                     </span>
-                                    <span>
-                                        <i class="fa-light fa-comment"></i>
-                                        <span class="commentCount">${elm.commentCount}</span>
+                                    <span  class="comment">
+                                    <i class="fa-light fa-comment"></i>
+                                    <span class="commentCount">${elm.commentCount}</span>
                                     </span>
+                                    <span  class="share">
                                     <i class="fa-light fa-share-nodes"></i>
+                                    </span>
                                 </span>
                                 <span>
                                      ${elm.isVerified ? '<i class="fa-solid fa-bookmark"></i>' : '<i class="fa-light fa-bookmark"></i>'}
@@ -1006,19 +1004,6 @@ function addCard() {
     })
     container.innerHTML = data;
 }
-
-addCard()
-
-function like(){
-
-let addlike = document.querySelectorAll(".cell-1 i.fa-heart")
-console.log(addlike);
-
-
-
-}
-like()
-
 function sugitionUser() {
 
     let sugitionCon = document.querySelector("#contact-newprofile")
@@ -1050,5 +1035,53 @@ function sugitionUser() {
     sugitionCon.innerHTML = data
 }
 
-sugitionUser()
 
+
+
+
+function render() {
+
+
+    addStory(5)
+   
+    addCard()
+
+    iconsMenu()
+
+    sugitionUser()
+}
+
+
+function main() {
+  render()
+
+}
+main()
+
+
+let allInDomCard = document.querySelectorAll(".card")
+
+allInDomCard.forEach(elm => {
+    elm.querySelector(".like i").addEventListener("click", () => {
+        let post = posts[elm.id]
+        let likeIcon = elm.querySelector(".like i")
+
+        if (post.isLiked) {
+            post.likeCount--
+            post.isLiked = false
+
+            likeIcon.classList.remove("fa-sharp", "fa-solid", "fa-heart")
+            likeIcon.classList.add("fa-light", "fa-heart")
+            likeIcon.style.color = "white"
+        } else {
+            post.likeCount++
+            post.isLiked = true
+
+            likeIcon.classList.remove("fa-light", "fa-heart")
+            likeIcon.classList.add("fa-sharp", "fa-solid", "fa-heart")
+            likeIcon.style.color = "red"
+        }
+
+        elm.querySelector(".likeCount").textContent = post.likeCount
+    })
+})
